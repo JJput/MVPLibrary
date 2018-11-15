@@ -20,10 +20,6 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
         return R.layout.activity_main;
     }
 
-    @Override
-    protected boolean isToolbar() {
-        return false;
-    }
 
     @Override
     protected MainContract.Presenter initInjector() {

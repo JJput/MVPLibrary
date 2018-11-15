@@ -3,15 +3,9 @@ package github.jjput.mvpbaselibrary.base;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.jj.app.jjmvpbaselibrary.R;
-import github.jjput.mvpbaselibrary.utils.LogUtil;
-import github.jjput.mvpbaselibrary.utils.StatusBarUtils;
+import github.jjput.utils.LogUtils;
 
 
 /**
@@ -24,49 +18,18 @@ public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivi
 
     protected final String TAG = this.getClass().getSimpleName();
     protected T mPresenter;
-    /**
-     * UI
-     */
-    private ImageButton mTitleLeft;
-    private TextView mTitleCenter;
-    private TextView mTitleRight;
-    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
-        LogUtil.d(TAG,"onCreate...");
-        //设置状态栏颜色
-        setStatusBarColor(0);
-        initTitle();
+        LogUtils.d(TAG, "onCreate...");
         mPresenter = initInjector();
         attachView();
         initData();
         initView();
     }
 
-    private void initTitle() {
-        if (!isToolbar()) {
-            return;
-        }
-        mToolbar = findViewById(R.id.toolbar);
-        mTitleLeft = findViewById(R.id.toolbar_LeftTitle);
-        mTitleCenter = findViewById(R.id.toolbar_CenterTitle);
-        mTitleRight = findViewById(R.id.toolbar_RightTitle);
-
-        if (mToolbar != null) {
-            //将Toolbar显示到界面
-            setSupportActionBar(mToolbar);
-        }
-        if (mTitleCenter != null) {
-            //getTitle()的值是activity的android:lable属性值
-            mTitleCenter.setText(getTitle());
-            //设置默认的标题不显示
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
-        }
-        showBacking();
-    }
 
     /**
      * this activity layout res
@@ -76,12 +39,6 @@ public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivi
      */
     protected abstract int getLayoutId();
 
-    /**
-     * 设置自定义标题栏是否启用
-     *
-     * @return true启用
-     */
-    protected abstract boolean isToolbar();
 
     /**
      * 初始化控件
@@ -119,73 +76,6 @@ public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivi
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
 
-    /**
-     * 获取标题左边的TextView
-     *
-     * @return
-     */
-    protected ImageButton getLeftTitle() {
-        return mTitleLeft;
-    }
-
-    /**
-     * 获取标题中间的TextView
-     *
-     * @return
-     */
-    protected TextView getCenterTitle() {
-        return mTitleCenter;
-    }
-
-    /**
-     * 获取标题右边的TextView
-     *
-     * @return
-     */
-    protected TextView getRightTitle() {
-        return mTitleRight;
-    }
-
-    /**
-     * 获取标题栏
-     *
-     * @return
-     */
-    protected Toolbar getToolbar() {
-        return mToolbar;
-    }
-
-    /**
-     * 是否显示后退按钮,默认显示,可在子类重写该方法.
-     *
-     * @return
-     */
-    protected void showBacking() {
-        mTitleLeft.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-    }
-
-    /**
-     * 是否显示后退按钮,默认显示,可在子类重写该方法.
-     *
-     * @return
-     */
-    protected void hideBacking() {
-        mTitleLeft.setVisibility(View.INVISIBLE);
-    }
-
-    /**
-     * 设置状态栏颜色
-     *
-     * @param colorResId 0表示使用默认 color.colorAccent
-     */
-    protected void setStatusBarColor(int colorResId) {
-        StatusBarUtils.setWindowStatusBarColor(this, colorResId == 0 ? R.color.colorAccent : colorResId);
-    }
 
     @Override
     public Context getContext() {
@@ -195,36 +85,36 @@ public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivi
     @Override
     protected void onRestart() {
         super.onRestart();
-        LogUtil.d(TAG,"onRestart()");
+        LogUtils.d(TAG, "onRestart()");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        LogUtil.d(TAG,"onStart()");
+        LogUtils.d(TAG, "onStart()");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        LogUtil.d(TAG,"onResume()");
+        LogUtils.d(TAG, "onResume()");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        LogUtil.d(TAG,"onPause()");
+        LogUtils.d(TAG, "onPause()");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        LogUtil.d(TAG,"onStop()");
+        LogUtils.d(TAG, "onStop()");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        LogUtil.d(TAG,"onDestroy()");
+        LogUtils.d(TAG, "onDestroy()");
     }
 }

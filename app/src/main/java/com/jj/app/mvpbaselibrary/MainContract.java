@@ -1,7 +1,7 @@
 package com.jj.app.mvpbaselibrary;
 
-import com.jj.app.jjmvpbaselibrary.base.IPresenter;
-import com.jj.app.jjmvpbaselibrary.base.IView;
+import github.jjput.mvpbaselibrary.base.IPresenter;
+import github.jjput.mvpbaselibrary.base.IView;
 
 /**
  * @作者: JJ

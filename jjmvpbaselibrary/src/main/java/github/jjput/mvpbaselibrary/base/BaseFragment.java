@@ -1,4 +1,4 @@
-package com.jj.app.jjmvpbaselibrary.base;
+package github.jjput.mvpbaselibrary.base;
 
 import android.content.Context;
 import android.os.Bundle;

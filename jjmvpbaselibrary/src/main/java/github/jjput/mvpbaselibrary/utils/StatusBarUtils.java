@@ -1,4 +1,4 @@
-package com.jj.app.jjmvpbaselibrary.utils;
+package github.jjput.mvpbaselibrary.utils;
 
 import android.app.Activity;
 import android.app.Dialog;

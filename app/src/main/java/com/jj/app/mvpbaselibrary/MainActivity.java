@@ -2,7 +2,7 @@ package com.jj.app.mvpbaselibrary;
 
 import android.widget.TextView;
 
-import com.jj.app.jjmvpbaselibrary.base.BaseActivity;
+import github.jjput.mvpbaselibrary.base.BaseActivity;
 
 
 /**

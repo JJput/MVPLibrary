@@ -1,4 +1,4 @@
-package com.jj.app.jjmvpbaselibrary.base;
+package github.jjput.mvpbaselibrary.base;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,8 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jj.app.jjmvpbaselibrary.R;
-import com.jj.app.jjmvpbaselibrary.utils.LogUtil;
-import com.jj.app.jjmvpbaselibrary.utils.StatusBarUtils;
+import github.jjput.mvpbaselibrary.utils.LogUtil;
+import github.jjput.mvpbaselibrary.utils.StatusBarUtils;
 
 
 /**
@@ -36,10 +36,7 @@ public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
-        //屏幕常亮
-        //getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        LogUtil.TAG = TAG;
-        LogUtil.d("onCreate...");
+        LogUtil.d(TAG,"onCreate...");
         //设置状态栏颜色
         setStatusBarColor(0);
         initTitle();
@@ -198,36 +195,36 @@ public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivi
     @Override
     protected void onRestart() {
         super.onRestart();
-        LogUtil.d("onRestart()");
+        LogUtil.d(TAG,"onRestart()");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        LogUtil.d("onStart()");
+        LogUtil.d(TAG,"onStart()");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        LogUtil.d("onResume()");
+        LogUtil.d(TAG,"onResume()");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        LogUtil.d("onPause()");
+        LogUtil.d(TAG,"onPause()");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        LogUtil.d("onStop()");
+        LogUtil.d(TAG,"onStop()");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        LogUtil.d("onDestroy()");
+        LogUtil.d(TAG,"onDestroy()");
     }
 }

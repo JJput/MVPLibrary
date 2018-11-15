@@ -1,6 +1,6 @@
 package com.jj.app.mvpbaselibrary;
 
-import com.jj.app.jjmvpbaselibrary.base.BasePresenter;
+import github.jjput.mvpbaselibrary.base.BasePresenter;
 
 /**
  * @作者: JJ

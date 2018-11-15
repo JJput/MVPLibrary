@@ -29,14 +29,9 @@ MVPLibrary详细定义了V层和P层基础内容。使其V层和P层只通过接
 ![](https://github.com/JJput/MVPLibrary/blob/master/app/src/main/res/drawable/img1.png?raw=true)
 
 
-
-
 * MainActivity V层。
 * MainContract 协议者，主要控制V层和P层之间的接口。
 * MainPresente P层。
-
-
-
 
 
 ### V层

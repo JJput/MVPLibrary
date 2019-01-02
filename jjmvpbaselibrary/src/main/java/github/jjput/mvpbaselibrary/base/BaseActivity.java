@@ -116,5 +116,9 @@ public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivi
     protected void onDestroy() {
         super.onDestroy();
         LogUtils.d(TAG, "onDestroy()");
+        if (mPresenter != null) {
+            mPresenter.clear();
+            mPresenter = null;
+        }
     }
 }

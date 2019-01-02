@@ -17,4 +17,9 @@ public class BasePresenter<T extends IView> implements IPresenter {
         mView = (T) iView;
     }
 
+    @Override
+    public void clear() {
+        
+    }
+
 }

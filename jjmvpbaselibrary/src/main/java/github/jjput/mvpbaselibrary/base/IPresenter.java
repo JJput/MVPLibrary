@@ -14,4 +14,6 @@ public interface IPresenter {
      * 注入View，使之能够与View相互响应
      */
     void attachView(@NonNull IView iView);
+
+    void clear();
 }

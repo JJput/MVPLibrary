@@ -14,7 +14,10 @@ import android.view.ViewGroup;
  * @Version 1.0
  * @描述:
  */
-public abstract class BaseFragment<T extends IPresenter> extends Fragment implements IView{
+public abstract class BaseFragment<T extends IPresenter> extends Fragment implements IView {
+
+    protected final String TAG = this.getClass().getSimpleName();
+    protected T mPresenter;
 
     @Nullable
     @Override
@@ -22,10 +25,12 @@ public abstract class BaseFragment<T extends IPresenter> extends Fragment implem
         View view = inflater.inflate(getLayoutId(), null);
         initData();
         findView(view);
+        mPresenter = initInjector();
+        attachView();
         return view;
     }
 
-    protected void initData(){
+    protected void initData() {
 
     }
 
@@ -33,12 +38,34 @@ public abstract class BaseFragment<T extends IPresenter> extends Fragment implem
 
     }
 
+    /**
+     * P层绑定   若无则返回null;
+     *
+     * @return
+     */
+    protected abstract T initInjector();
+
+
+    private void attachView() {
+        if (mPresenter != null) {
+            mPresenter.attachView(this);
+        }
+    }
+
     @Nullable
     @Override
     public Context getContext() {
-        return getContext();
+        return super.getContext();
     }
 
     protected abstract int getLayoutId();
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (mPresenter != null) {
+            mPresenter.clear();
+            mPresenter = null;
+        }
+    }
 }

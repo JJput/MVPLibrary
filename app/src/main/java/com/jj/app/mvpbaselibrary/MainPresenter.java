@@ -12,7 +12,7 @@ public class MainPresenter extends BasePresenter<MainContract.View> implements M
 
     @Override
     public void startRequsetData() {
-        String data = null;
+        String data = "Hello MVP";
         /**
          * ...
          */

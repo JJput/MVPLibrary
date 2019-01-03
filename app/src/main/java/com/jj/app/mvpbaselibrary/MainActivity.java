@@ -30,12 +30,12 @@ public class MainActivity extends BaseActivity<MainContract.Presenter> implement
     protected void initView() {
         super.initView();
         tvText = findViewById(R.id.main_tv);
+        mPresenter.startRequsetData();
     }
 
     @Override
     protected void initData() {
         super.initData();
-        mPresenter.startRequsetData();
     }
 
     @Override

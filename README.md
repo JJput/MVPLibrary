@@ -3,6 +3,7 @@
 
 MVP设计模式，提供BaseActivity、BasePresenter等公共基础类。
 
+更新日志查看[**这里**](https://github.com/JJput/MVPLibrary/blob/master/VERSIONLOG.md)。
 
 ## 引用
 
@@ -18,7 +19,7 @@ MVP设计模式，提供BaseActivity、BasePresenter等公共基础类。
 app -> build.gradle
 
 	dependencies {
-	        implementation 'com.github.JJput:MVPLibrary:v1.0'
+	        implementation 'com.github.JJput:MVPLibrary:v1.0.2'
 	}
 
 ## 基本使用

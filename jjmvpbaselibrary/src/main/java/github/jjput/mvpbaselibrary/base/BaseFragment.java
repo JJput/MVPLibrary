@@ -23,10 +23,10 @@ public abstract class BaseFragment<T extends IPresenter> extends Fragment implem
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(getLayoutId(), container,false);
-        initData();
-        findView(view);
         mPresenter = initInjector();
         attachView();
+        initData();
+        findView(view);
         return view;
     }
 

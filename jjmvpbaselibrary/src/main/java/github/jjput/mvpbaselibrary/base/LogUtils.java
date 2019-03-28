@@ -55,25 +55,25 @@ public class LogUtils {
 
     public static void d(String tag, String text) {
         if (DEBUG && DEBUG_D) {
-            Log.d(TAG, text);
+            Log.d(tag, text);
         }
     }
 
     public static void i(String tag, String text) {
         if (DEBUG && DEBUG_I) {
-            Log.i(TAG, text);
+            Log.i(tag, text);
         }
     }
 
     public static void w(String tag, String text) {
         if (DEBUG && DEBUG_W) {
-            Log.w(TAG, text);
+            Log.w(tag, text);
         }
     }
 
     public static void e(String tag, String text) {
         if (DEBUG && DEBUG_E) {
-            Log.e(TAG, text);
+            Log.e(tag, text);
         }
     }
 

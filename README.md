@@ -25,7 +25,7 @@ app -> build.gradle
 ## 基本使用
 MVPLibrary详细定义了V层和P层基础内容。使其V层和P层只通过接口进行通讯。详情可以将项目下载下来，查看其示例，下面也会简单介绍。
 
-### 1、目录结构
+### 目录结构
 
 * MainActivity V层。
 * MainContract 协议者，主要控制V层和P层之间的接口。
